@@ -1,0 +1,13 @@
+<label for="aikavali"> Valmistumisvuosi välillä: &nbsp&nbsp </label>
+        <select id="aikavali" name="aikavali">    
+            <% if (vuosiluvut) { %>
+                <% for (var i = vuosiluvut.vanhinElokuva; i <= vuosiluvut.uusinElokuva; i++) { %>
+                    <option value="<%=i%>" selected><%=i%></option>
+                 <% } else { %>
+                    <option value="<%=i%>"><%=i%></option>
+            <% }; %>         
+        <select> 
+
+
+
+        

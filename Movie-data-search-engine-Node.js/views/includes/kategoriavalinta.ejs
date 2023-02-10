@@ -1,0 +1,15 @@
+<label class="checkbox-inline ml-3 mt-2">
+
+    <% if (lomaketiedot.tyylilaji && (lomaketiedot.tyylilaji.indexOf(elokuvaKategoria) > -1)) { %>
+        <input type="checkbox" name="tyylilaji" value="<%=elokuvaKategoria%>" checked> 
+    <% } else { %>
+        <input type="checkbox" name="tyylilaji" value="<%=elokuvaKategoria%>"> 
+    <% } %>
+
+    &nbsp<%=elokuvaKategoria%>
+
+</label>
+
+
+
+

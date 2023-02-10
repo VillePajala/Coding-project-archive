@@ -1,0 +1,7 @@
+{
+  "name": "nothing-works-in-ionic",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

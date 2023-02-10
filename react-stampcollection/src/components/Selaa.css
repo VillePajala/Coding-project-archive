@@ -1,0 +1,29 @@
+#kortti {
+    color: black;
+    text-align: center;
+    width: 25%;
+    text-decoration: none;
+    padding: 20px;
+}
+
+#kortti:hover {
+    color: rgb(107, 107, 107);
+}
+
+#kortinKuva {
+    text-align: center;
+    max-width: 260px;
+}
+
+#korttiRivi {
+    text-align: center;
+}
+
+#kortinRunko {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    max-width: 200px;
+    margin: auto;
+    text-decoration: none;
+}
+

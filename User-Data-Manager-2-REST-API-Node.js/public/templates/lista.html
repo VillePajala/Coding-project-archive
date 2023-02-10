@@ -1,0 +1,20 @@
+<h2>Tehtävälista</h2>
+
+<div class="list-group">     
+    <a ng-href="{{'#/tehtava/' + $index}}" class="list-group-item" ng-repeat="tehtava in tehtavat">
+        <h4 class="list-group-item-heading">
+            <span class="glyphicon glyphicon-unchecked" ng-hide="tehtava.suoritettu"></span>
+            <span class="glyphicon glyphicon-check" ng-show="tehtava.suoritettu"></span>
+            {{ tehtava.nimi }}
+        </h4>
+        
+        <p class="list-group-item-text">
+            {{ tehtava.ohje }}
+        </p>
+    </a>
+</div>
+
+<a href="#/tehtava/_uusi" class="btn btn-default">Lisää uusi tehtävä</a>
+
+
+

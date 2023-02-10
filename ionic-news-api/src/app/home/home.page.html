@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="header">
+      <h3>UUTISVIRTA</h3>
+    </ion-title>
+    <ion-buttons padding slot="end">
+      <ion-icon size="large" id="refresh" name="refresh-circle"
+      slot="end" (click)="newsStream.refreshData()">Refresh
+      </ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <br>
+  <div text-center>
+    <ion-button size="small" color="primary" (click)="presentPopover()">
+      Valitse kategoria
+    </ion-button>
+  </div>
+
+  <ion-list padding>
+    <ion-item no-padding *ngFor="let newsitem of newsStream.news; let i = index" [routerLink]="'/newsitem/' + i">
+      <ion-item no-padding lines="none" *ngIf="newsitem.kuva !='img/eikuvaa.png'">
+        <ion-thumbnail style="height: 80px; width: 80px">
+          <img src="{{ newsitem.kuva }}">
+        </ion-thumbnail>
+      </ion-item>
+
+      <ion-item no-padding lines="none" *ngIf="newsitem.kuva =='img/eikuvaa.png'">
+        <ion-thumbnail style="height: 80px; width: 80px">
+            <img src="assets/img/eikuvaa.png">
+        </ion-thumbnail>  
+      </ion-item>
+      <br>
+      <p style="font-size: 11px;">{{ newsitem.otsikko }}<br>
+      {{ newsitem.pvm | slice: 0 : -5 }}</p>
+      <br>
+
+      <ion-item no-padding lines="none" slot="end">
+        <ion-item no-padding lines="none" *ngIf="newsStream.oldDate < newsitem.aikaleima">
+            <ion-badge>Uusi</ion-badge>
+        </ion-item>
+
+        <ion-item no-padding lines="none" *ngIf="newsStream.currentDate - newsitem.aikaleima < 3600000">
+          <p style="font-size: 9px">{{ (newsStream.currentDate - newsitem.aikaleima) / 60000 | number:'1.0-0' }}<br> min<br> sitten</p>
+        </ion-item>
+
+        <ion-item  no-padding lines="none" *ngIf="newsStream.currentDate - newsitem.aikaleima >= 3600000 && newsStream.currentDate - newsitem.aikaleima < 3600000 * 12">
+          <p style="font-size: 9px">{{ (newsStream.currentDate - newsitem.aikaleima) / 3600000 | number:'1.0-0' }} h <br> 
+          {{ ((newsStream.currentDate - newsitem.aikaleima) % 3600000) / 60000 | number:'1.0-0' }} min<br> sitten</p>
+        </ion-item>
+
+        <ion-item no-padding lines="none" *ngIf="newsStream.currentDate - newsitem.aikaleima >= 3600000 * 12">
+            <p style="font-size: 9px">Yli <br>12 h<br> sitten</p>
+        </ion-item>
+      </ion-item>
+     
+      <br>
+      
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+

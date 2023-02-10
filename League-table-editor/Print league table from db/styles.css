@@ -1,0 +1,72 @@
+body {
+	margin: 50px 50px 50px 50px;
+}
+#kehys {
+	font-family: 'Rajdhani', sans-serif;
+	box-shadow: 0 5px 50px silver;
+	max-width: 960px;
+	margin: auto;
+	text-align: center;
+	border: 2px solid white;
+	padding: 0;
+	background: linear-gradient(to right, #00c9ff, #92fe9d);
+}
+#kehys {
+	font-size: 20px;
+}
+form {
+	width: 70%;
+	margin: auto;
+}
+#header {
+	width: 100%;
+	margin: auto;
+	background: silver;
+	padding: 0;
+	margin: 0;
+	background: linear-gradient(to right, #30e8bf, #ff8235);
+	border-bottom: 1px solid white;
+}
+#header h1 {
+	font-size: 50px;
+	color: white;
+	text-shadow: 0 2px 5px black;
+}
+#footer {
+	width: 100%;
+	margin: auto;
+	background: silver;
+	padding: 0;
+	margin: 0;
+	background: linear-gradient(to right, #30e8bf, #ff8235);
+	border-top: 1px solid white;
+}
+#laatikko {
+	width: 80%;
+}
+table {
+	border-collapse: collapse;
+  width: 100%;
+	box-shadow: 0 5px 50px grey;
+}
+table tr:nth-child(even) {
+	background-color: #f2f2f2;
+	padding: 10px;
+}
+table tr:nth-child(odd) {
+	background-color: #ffffff;
+}
+table td {
+	padding: 5px;
+}
+table th {
+	color: white;
+	background-color: #123456;
+	width: auto;
+	margin: auto;
+	text-align: center;
+}
+
+
+
+

@@ -1,0 +1,19 @@
+--
+-- Create schema kirjautuminen
+--
+DROP DATABASE IF EXISTS kirjautuminen;
+CREATE DATABASE kirjautuminen DEFAULT CHARACTER SET utf8 COLLATE utf8_swedish_ci;
+USE kirjautuminen;
+DROP TABLE IF EXISTS tunnukset;
+CREATE TABLE tunnukset (
+  id int(10) auto_increment,
+  tunnus text NOT NULL, 
+  salasana text NOT NULL, 
+  PRIMARY KEY  (id)
+);
+--
+-- Dumping data for table `tunnukset`
+--
+INSERT INTO tunnukset (tunnus,salasana) 
+VALUES  ('Ville','kissakala'),
+('Kalle','kalakissa');

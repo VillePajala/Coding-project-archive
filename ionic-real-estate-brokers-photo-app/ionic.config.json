@@ -1,0 +1,7 @@
+{
+  "name": "ionic-real-estate-brokers-photo-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

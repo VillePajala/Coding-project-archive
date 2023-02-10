@@ -1,0 +1,7 @@
+{
+  "name": "ionic-cash-machine-location-and-qr-reader",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

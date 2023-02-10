@@ -1,0 +1,200 @@
+/*
+file: styles.css
+desc: Blogisivuston taitto
+date: 4.12.2018
+auth: Ville Pajala
+*/
+
+body {
+    font-family: 'Cabin', sans-serif;
+}
+
+#header {
+    font-family: 'Orbitron', sans-serif;
+    padding-top: 30px;
+    height: 220px;
+    background: #0f2027; 
+    background: -webkit-linear-gradient(to bottom, #0f2027, #203a43, #2c5364); 
+    background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364); 
+    padding: 10px; 
+    text-align: center;
+    color: white;
+    border: 5px solid black;
+    text-shadow: 0px 20px 100px black;
+}
+
+h1 {
+    background: #e65c00; 
+    background: -webkit-linear-gradient(to top, #e65c00, #f9d423); 
+    background: linear-gradient(to top, #e65c00, #f9d423); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px white; 
+    text-stroke: 1px red;
+    letter-spacing: 1px;
+    
+}
+
+h3 {
+    letter-spacing: 2px;
+}
+
+h6 {
+    padding-top: 40px;
+    color: silver;
+}
+
+#alaotsikko {
+    text-align: center;
+}
+
+#pohja {
+    background-color: #f3f3f3;
+    padding: 20px;
+    box-shadow: 0 2px 5px silver;
+    min-height: 600px;
+}
+
+#viesti {
+    text-align: center;
+}
+
+#footer {
+    text-align: center;
+    background: #0f2027; 
+    background: -webkit-linear-gradient(to top, #0f2027, #203a43, #2c5364); 
+    background: linear-gradient(to top, #0f2027, #203a43, #2c5364); 
+    height: 100px;
+    box-shadow: 0 2px 5px silver;
+    color: white;
+}
+
+#tiedot{
+    text-align: center;
+}
+
+#tekstikehys {
+    background: #ada996; 
+    background: -webkit-linear-gradient(to top, #ada996, #f2f2f2, #dbdbdb, #eaeaea); 
+    background: linear-gradient(to top, #eaeaea, #f2f2f2, #dbdbdb, #eaeaea); 
+    padding: 40px 40px 20px 40px;
+    margin: auto;
+    box-shadow: 0 2px 5px silver;
+    border: 2px solid white;
+    max-width: 900px;
+}
+
+#otsake {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    background: #0f2027; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #0f2027, #203a43, #2c5364); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364); 
+    padding: 10px; 
+    text-align: center;
+    color: white;
+    border: 5px solid black;
+    text-shadow: 0px 20px 100px black;
+}
+
+#napit {
+    text-align: center;
+    margin: auto;
+}
+
+.btn {
+    box-shadow: 0 2px 10px grey;
+    margin: 5px 10px;
+    border: 1px solid white;
+}
+
+
+
+
+   /* Small devices (portrait tablets and large phones, 600px and up) */
+   @media only screen and (max-width: 576px) {
+  
+    h1 {
+        font-size: 30px;
+    }
+    
+    h3 {
+        font-size: 17px;
+    }
+
+    #otsake {
+        font-size: 20px;
+    }
+
+    #header {
+        height: 210px;
+    }
+
+  }
+    
+    
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 576px) {
+  
+    h1 {
+        font-size: 40px;
+    }
+    
+    h3 {
+        font-size: 20px;
+    }
+
+    #otsake {
+        font-size: 25px;
+    }
+
+
+    #header {
+        height: 210px;
+    }
+
+  }
+    
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+  
+    h1 {
+        font-size: 50px;
+    }
+
+    h3 {
+        font-size: 30px;
+    }
+
+    #otsake {
+        font-size: 30px;
+    }
+
+    #header {
+        height: 250px;
+    }
+    
+    
+  }
+  
+    
+    
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+      
+    h1 {
+        font-size: 60px;
+    }
+       
+    #header {
+        height: 270px;
+    }
+  }
+    
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+    
+  
+       
+  }
+    

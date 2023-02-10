@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link href="styles.css" media="all" rel="stylesheet" type="text/css"/>
+		<script src="script.js"></script>
+  </head>
+		<title>Bird Sightings</title>
+	</head>
+
+		<body>
+
+		<div class="container" id="kehys">
+			<div class="container "id="lomake"><br>
+				<h2>LINTUHAVAINNOT</h2><br>
+				Laji:<br/> <input id="laji" placeholder="Syötä lintulaji"><br/><br/>
+				Havaintopäivä:<br/> <input id="havaintoPaiva" placeholder="Syötä muodossa pp/kk"><br/><br/>
+				Havaintoaika:<br/> <input id="havaintoAika" placeholder="Syötä muodossa hh:mm"><br/><br/>
+				Havaintopaikka:<br/> <input id="havaintoPaikka" placeholder="Syötä Paikkakunta"><br/><br/>
+				Lintujen lukumäärä:<br/> <input id="lukumaara" placeholder="Syötä lukumäärä"><br/><br/>
+			</div><br>
+
+			<div class="container" id="napit">
+				<button id="tallenna">Tallenna havainto</button><br>
+				<button id="kokoLista">Näytä kaikki havainnot</button>
+			</div><br/>
+			
+			<div class="table-responsive" hidden>
+				<div id="hakuKentta" hidden>
+					<button id="haku" hidden>Hae</button>
+					<input id="havainto" placeholder="Syötä Laji">
+				</div>
+				
+				<table class="table" id="taulukko" >
+				</table>
+			</div>
+
+			<div id="laatikko">
+			</div>
+
+		</div>
+
+		</body>
+
+</html>
+
+

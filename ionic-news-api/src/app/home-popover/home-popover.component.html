@@ -1,0 +1,35 @@
+<ion-content padding>
+
+  <div style="text-align: center">
+    <h3>Valitse kategoria:</h3>
+      
+    <ion-list>
+      <ion-button expand="block" (click)="newsStream.getByCategory(yleiset)">
+        Yleiset
+      </ion-button>
+
+      <ion-button expand="block" (click)="newsStream.getByCategory(urheilu)">
+        Urheilu
+      </ion-button>
+
+      <ion-button expand="block" (click)="newsStream.getByCategory(viihde)">
+        Viihde
+      </ion-button>
+
+      <ion-button expand="block" (click)="newsStream.getByCategory(terveys)">
+        Terveys
+      </ion-button>
+
+      <ion-button expand="block" (click)="newsStream.getByCategory(matkailu)">
+        Matkailu
+      </ion-button>
+
+      <ion-button expand="block" (click)="newsStream.getByCategory(digi)">
+        Digi
+      </ion-button>
+    </ion-list>
+  </div>
+  
+</ion-content>
+
+

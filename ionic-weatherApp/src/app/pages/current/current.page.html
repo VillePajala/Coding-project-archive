@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title text-center class="headertext">
+      Mobiilisää
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding *ngIf="fetchedWeatherData.lastWeatherSearch">
+  <ion-item *ngIf="hide">
+      {{ city | titlecase }}
+  </ion-item>
+
+  <div padding class="frame" text-center padding>
+    <h1 style="font-size: 35px">Sää {{ fetchedWeatherData.lastWeatherSearch.name | titlecase }}</h1>
+    <h1 padding style="font-size: 35px">{{ fetchedWeatherData.lastWeatherSearch.main.temp | number:'1.0-0'  }} °C <br></h1>
+    <i class="owf owf-{{ fetchedWeatherData.fetchedWeatherData.weather[0].id }} owf-5x"></i>
+    <h3>{{ fetchedWeatherData.lastWeatherSearch.weather[0].description | slice: 0:1 | titlecase }}{{ fetchedWeatherData.lastWeatherSearch.weather[0].description | slice: 1 }} </h3>
+    <h3>Tuulen nopeus: {{ fetchedWeatherData.lastWeatherSearch.wind.speed | number:'1.0-0' }} m/s</h3>
+    <h4>Päivän alin: {{ fetchedWeatherData.lastWeatherSearch.main.temp_min | number:'1.0-0' }} °C <br></h4>
+    <h4>Päivän ylin: {{ fetchedWeatherData.lastWeatherSearch.main.temp_max | number:'1.0-0' }} °C <br><br></h4>
+  </div>
+  <br>
+</ion-content>

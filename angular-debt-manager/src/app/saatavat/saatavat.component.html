@@ -1,0 +1,28 @@
+<h2>SAATAVAT</h2>
+<h3>Yhteensä: {{ laskeSaatavat() | currency : "EUR" }}</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Keneltä</th>
+      <th>Summa</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tr *ngFor="let saatava of kaikkiSaatavat">
+    <td>{{ saatava.nimi }}</td>
+    <td>{{ saatava.summa | currency : "EUR" }}</td>
+    <td><button (click)="poistaSaatava(saatava.id)" class="btn btn-secondary" value="saatava.id">Poista</button></td>
+  </tr>
+
+  <tr>
+    <td><input class="forms-control" [(ngModel)]="nimi" placeholder="Keneltä.."></td>
+    <td><input class="forms-control" [(ngModel)]="summa" placeholder="Summa.."></td>
+    <td><button (click)="lisaaUusi()" class="btn btn-secondary">Lisää</button></td>
+  </tr>
+</table>
+
+
+
+

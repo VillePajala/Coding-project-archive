@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+Ville Pajala
+-->
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link href="styles.css" media="all" rel="stylesheet" type="text/css"/>
+		<script src="script.js"></script>
+  </head>
+		<title>ot5b</title>
+	</head>
+
+  <body>
+
+    <div class="container-fluid" id="kehys">
+      <h2>TAKSI</h2>
+
+      <div class="container "id="lomake">
+        <label for="lahto">Lähtöosoite:</label>
+        <input id="alku" placeholder="Syötä lähtöosoite"><br/><br/>
+        <label for="kohde">Kohdeosoite:</label>
+        <input id="loppu" placeholder="Syötä kohdeosoite"><br/><br/>
+        
+        <form>
+          <div class="form-group">
+            <label for="sel1">Maksuluokka:</label>
+            <select class="form-control" id="sel1">
+              <option value="1.60">1-2 Matkustajaa</option>
+              <option value="1.91">3-4 Matkustajaa</option>
+              <option value="2.07">4-5 Matkustajaa</option>
+              <option value="2.23">yli 6 Matkustajaa</option>
+            </select><br/>
+
+            <label for="sel2">Ajankohta:</label>
+            <select class="form-control" id="sel2">
+              <option value="5.90">Arkisin klo 6-20</option>
+              <option value="5.90">Lauantai klo 6-16</option>
+              <option value="9">Muu aika</option>
+            </select>
+          </div>
+        </form>
+      </div><br>
+        
+      <div class="container" id="napit">
+        <button id="laske">Laske arvio</button><br><br>
+        <button id="tyhjenna">Tyhjennä</button><br>
+      </div>
+
+        <br/>
+            
+      <div id="laatikko">
+      </div>
+
+    </div>
+
+  </body>
+
+</html>

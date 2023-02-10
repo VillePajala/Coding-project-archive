@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title text-center class="headertext">
+      Mobiilisää
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="frame2">
+    <div padding text-center>
+      <h3>Paikkakunta: {{ fetchedWeatherData.lastCity | titlecase }}</h3>
+    </div>
+
+    <div text-center>
+        <h2>Vaihda paikkakuntaa:</h2>
+    </div>
+    
+    <ion-item>
+      {{ city }}
+    </ion-item>
+  
+    <ion-card padding color="danger" class="maincontent" text-center lines="none" *ngIf="fetchedWeatherData.fetchedWeatherData.cod != '200'">
+      <h6> {{ fetchedWeatherData.error }}</h6>
+    </ion-card>
+            
+    <ion-input color="dark" type="text" [(ngModel)]="city" class="form-control mt-3" placeholder="Kirjoita paikkakunta"></ion-input><br>
+          
+    <div padding text-center>
+      <ion-button class="nappi" (click)="fetchedWeatherData.fetchWeatherDataByCity(city)">Hae sää</ion-button><br><br>
+    </div>
+  </div>
+</ion-content>

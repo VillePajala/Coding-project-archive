@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mökinvaraaja</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card padding color="danger" *ngIf="virhe && !cabinRented">
+    {{ virhe }}
+  </ion-card>
+
+  <ion-list>
+    <ion-list-header>
+      <h4>Valitse Mökki</h4>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>Mökin tyyppi</ion-label>
+      <ion-select value="perusmokki" okText="Okay" cancelText="Dismiss" [(ngModel)]="mokkiHinta">
+        <ion-select-option value="33">Kimppa 33 e/vrk</ion-select-option>
+        <ion-select-option value="46">Perus 2h 46 e/vrk</ion-select-option>
+        <ion-select-option value="66">Perus 4h 66 e/vrk</ion-select-option>
+        <ion-select-option value="157">Luksus 157 e/vrk</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-item>
+    <ion-label>Vuokrauspäivä</ion-label>
+    <ion-datetime [(ngModel)]="varauspaiva"
+      display-format="D MMM DDD, YYYY"
+      picker-format="DDDD D MMM, YYYY"
+      month-names="Tammikuu, Helmikuu, Maaliskuu, Huhtikuu, Toukoku, Kesäkuu, Heinäkuu, Elokuu, Syysykuu, Lokakuu, Marraskuu, Joulukuu"
+      month-short-names="Tam, Hel, Maa, Huh, Tou, Kes, Hei, Elo, Syy, Lok, Mar, Jou"
+      day-names="Maanantai, Tiistai, Keskiviikko, Torstai. Perjantai. Lauantai, Sunnuntai"
+      day-short-names="Ma, Ti, Ke, To, Pe, La, Su">
+    </ion-datetime>
+  </ion-item>
+  
+  <ion-list>
+    <ion-list-header>
+      Vuokrauksen kesto päivinä: {{ kesto }}
+    </ion-list-header>
+
+    <ion-item>
+      <ion-range pin="true" min="1" max="7" [(ngModel)]="kesto"></ion-range>
+    </ion-item>
+    
+    <ion-list>
+      <ion-label padding>Loppusiivous (+100 €) </ion-label>
+      <ion-checkbox [(ngModel)]="siivous" color="primary"></ion-checkbox>
+    </ion-list>
+  </ion-list>
+
+  <ion-item lines="none" *ngIf="siivous">
+    Varauksen kokonaissumma  {{ mokkiHinta * kesto + 100 | currency : "EUR"}}
+  </ion-item>
+
+  <ion-item lines="none" *ngIf="!siivous">
+    Varauksen kokonaissumma  {{ mokkiHinta * kesto | currency : "EUR"}}
+  </ion-item>
+
+  <ion-button *ngIf="cabinRented == false" (click)="checkInput()" padding expand="block">Varaa Mökki</ion-button>
+
+  <ion-card text-center padding *ngIf="cabinRented">
+    <h4>Mökki varattu!</h4>
+  </ion-card>
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar id="footer">
+    <div float-right>
+      <ion-icon padding size="large" text-right (click)="goForward()" name="arrow-forward">Yhteystiedot</ion-icon>
+    </div>
+    <div float-right>
+      <h6>Seuraava</h6>
+    </div>
+  </ion-toolbar>
+</ion-footer>
+
+

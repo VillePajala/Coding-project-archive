@@ -1,0 +1,198 @@
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+#kommentit {
+  max-width: 850px;
+  box-shadow: 0 2px 15px silver;
+  padding: 20px;
+}
+#kommentti {
+  padding: 20px 20px 10px 20px;
+  box-shadow: 0 2px 15px silver;
+}
+#aika {
+  float: right;
+}
+#nimi {
+  float: left;
+}
+.nappi {
+  box-shadow: 0 4px 15px #5b5b5b;
+}
+#ylatunniste {
+  height: 120px;
+  color: white;
+  background: silver;
+  background: #0f2027; 
+  background: -webkit-linear-gradient(to bottom, #0f2027, #203a43, #2c5364); 
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364); 
+}
+#sisalto {
+  text-align: justify;
+  min-height: 600px;
+  box-shadow: 0 5px 15px silver;
+  padding: 50px 100px 50px 100px;
+  background: #0f2027; 
+  background: -webkit-linear-gradient(to right, #eeeeee, white, #eeeeee); 
+  background: linear-gradient(to right, #eeeeee, white, #eeeeee); 
+}
+#sisalto2 {
+  text-align: justify;
+  min-height: 600px;
+  box-shadow: 0 5px 15px silver;
+  background: #0f2027; 
+  background: -webkit-linear-gradient(to right, #eeeeee, white, #eeeeee); 
+  background: linear-gradient(to right, #eeeeee, white, #eeeeee); 
+}
+#otsikko {
+  padding: 20px;
+  max-width: 700px;
+  margin: auto;
+  font-size: 35px;
+  text-align: center;
+  text-transform: uppercase;
+  background: #0f2027; 
+  background: -webkit-linear-gradient(to bottom, #0f2027, #203a43, #2c5364); 
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364); 
+  color: white;
+}
+#logout{
+  margin-top: 5px;
+  box-shadow: 0 4px 15px #5b5b5b;
+}
+#info {
+  float: right
+}
+#footer h5 {
+  text-align: center;
+}
+h1 {
+  font-weight: bold;
+  font-size: 35px;
+  padding-top: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  
+  background: #8e9eab; 
+  background: -webkit-linear-gradient(to bottom, #8e9eab, #eef2f3); 
+  background: linear-gradient(to bottom, #8e9eab, #eef2f3); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px white; 
+  text-stroke: 1px white;
+}
+h2 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+h4 {
+  font-size: 30px;
+  padding-top: 50px;
+  text-align: center;
+  text-transform: uppercase;
+}
+h5 {
+  font-size: 15px;
+  text-align: right;
+  text-transform: uppercase;
+  text-shadow: 0 4px 15px #5b5b5b;
+}
+h6 {
+  text-align: center;
+}
+#napit {
+    text-align: center;
+    margin: auto;
+}
+
+
+/* RWD */
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 576px) {
+ 
+  #sisalto {
+    padding: 50px 50px 50px 50px;
+  }
+  
+}
+  
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 576px) {
+
+  #sisalto {
+    padding: 50px 50px 50px 50px;
+  }
+  
+  h1 {
+    font-size: 40px;
+  }
+
+  #ylatunniste {
+    height: 127px;
+  }
+
+}
+  
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+  #sisalto {
+    padding: 80px 100px 80px 100px;
+  }
+  
+  h1 {
+    font-size: 70px;
+  }
+
+  #ylatunniste {
+    height: 165px;
+  }
+
+}
+
+  
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    
+  #sisalto {
+    padding: 80px 150px 80px 150px;
+  }
+  
+}
+  
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  
+  #sisalto {
+    padding: 70px 220px 70px 220px;
+  }
+ 
+}
+  

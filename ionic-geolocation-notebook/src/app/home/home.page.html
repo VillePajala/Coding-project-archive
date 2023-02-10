@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    
+  <div class="ion-padding">
+    <ion-button expand="block" (click)="getLocation()">Hae sijainti</ion-button>
+    <ion-item *ngFor="let location of database.locations">
+        {{ location.id }}
+        {{ location.lat }}
+        {{ location.lon }}
+        {{ location.timestamp }}
+    </ion-item>
+    
+  </div>
+    
+</ion-content>

@@ -1,0 +1,52 @@
+<%- include("includes/header"); -%>
+    <hr>
+    <h2 id="alaotsikko" class="mb-2">KIRJOITA UUSI TEKSTI</h2>
+    <hr>
+
+    <form method="POST" name="Form" action="/tallenna" onSubmit="return vahvista()"><br>
+        <label for="otsikko"><h4>Otsikko:</h4></label>
+        <input type="text" name="otsikko" id="otsikko" class="form-control"><br><br>
+        <label for="otsikko"><h4>Teksti:</h4></label>
+        <textarea name="kirjoitus" id="kirjoitus" class="form-control"></textarea>
+        <script> CKEDITOR.replace( "kirjoitus" );</script><br>
+
+        <div id="napit" class="container">
+            <input type="submit" name="tallenna" value="Julkaise kirjoitus blogiin" class="btn btn-primary">
+        </div>
+    </form><br><br>
+
+        <hr>
+        <h2 id="alaotsikko" class="mb-2">AIKAISEMMAT BLOGITEKSTIT</h2>
+        <hr><br>
+
+        <% blogitekstit.forEach((blogiteksti) => { %>
+
+        <%
+            let aika = new Date(blogiteksti.aikaleima);
+        %>
+
+        <div id="tekstikehys" class="container">
+            <h2 id="otsake"><%=blogiteksti.otsikko%></h2>
+            <hr>
+            <p id="tiedot"><i>Kirjoittaja: <%=blogiteksti.kirjoittaja%><br>
+            <%=aika.getDate()%>.<%=aika.getMonth()+1%>.<%=aika.getFullYear()%> - klo 
+                <%=aika.getHours()%>:<%=(aika.getMinutes() < 10 ? "0" : '' ) + aika.getMinutes() %></i></p>
+                <hr>
+            <p><%-blogiteksti.kirjoitus%></p>
+            
+        <div id="napit" class="container">
+            <a href="/tykkays<%=blogiteksti.id%>" class="btn btn-primary disabled">Hyvin sanottu (<%=blogiteksti.tykkaykset%>)</a>
+            <a href="/erimieli<%=blogiteksti.id%>" class="btn btn-secondary disabled">En ole samaa mieltä (<%=blogiteksti.erimielet%>)</a>
+            <a href="/poista<%=blogiteksti.id%>" class="btn btn-primary btn-danger">Poista</a>
+        </div>
+        
+        </div><br>
+        
+        <% }); %><br>
+            
+    </div>
+</div>
+
+    <%- include("includes/footer"); -%>
+
+    

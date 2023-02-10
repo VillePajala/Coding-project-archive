@@ -1,0 +1,154 @@
+<%- include("includes/header"); -%>
+
+            <div class="container" id="content">
+                <form class="form-inline" method="POST" action="/haku">
+                    <div class="card w-100">
+                        <div class="card-body">
+                            <div class="container" id="buttonbox2">
+                                
+                                <% if (lomaketiedot.maara == null) { %>
+                                    <input type="hidden" name="maara" value="<%=tulostusmaara%>"><br>
+                                <% } %>
+
+                                <input class="form-control" type="text" name="hakusana" value="<%=lomaketiedot.hakusana%>" placeholder="Anna hakusana..." size="60">&nbsp;&nbsp
+                                <input class="btn btn-primary" type="submit" value="Hae">
+                            
+                            </div>
+
+                            <hr>
+
+                            <div class="row" id="buttonbox">
+                                <div class="container" id="buttonbox">
+                                    <h5>Hae:</h5>
+                                </div>
+                                
+                                <%- include("includes/hakurajaus", { "kriteeri" : "Elokuvaa" }) %>
+                                <%- include("includes/hakurajaus", { "kriteeri" : "Ohjaajaa" }) %>  
+                                <%- include("includes/hakurajaus", { "kriteeri" : "Näyttelijää" }) %>  
+                            </div>
+
+                            <hr>
+
+                            <div class="row" id="buttonbox2">
+                                <div class="container" id="buttonbox">
+                                    <h5>Suodata tyylilajin mukaan:</h5>
+                                </div>
+        
+                                <%- include("includes/kategoriavalinta", { "elokuvaKategoria" : "Animaatio" }) %> 
+                                <%- include("includes/kategoriavalinta", { "elokuvaKategoria" : "Dokumentti" }) %> 
+                                <%- include("includes/kategoriavalinta", { "elokuvaKategoria" : "Draama" }) %>   
+                                <%- include("includes/kategoriavalinta", { "elokuvaKategoria" : "Fantasia" }) %>   
+                                <%- include("includes/kategoriavalinta", { "elokuvaKategoria" : "Kauhu" }) %>  
+                                <%- include("includes/kategoriavalinta", { "elokuvaKategoria" : "Komedia" }) %>   
+                                <%- include("includes/kategoriavalinta", { "elokuvaKategoria" : "Lastenelokuva" }) %>  
+                                <%- include("includes/kategoriavalinta", { "elokuvaKategoria" : "Musiikkielokuva" }) %>  
+                                <%- include("includes/kategoriavalinta", { "elokuvaKategoria" : "Rikos" }) %>   
+                                <%- include("includes/kategoriavalinta", { "elokuvaKategoria" : "Romantiikka" }) %>  
+                                <%- include("includes/kategoriavalinta", { "elokuvaKategoria" : "Scifi" }) %>   
+                                <%- include("includes/kategoriavalinta", { "elokuvaKategoria" : "Seikkailu" }) %>  
+                                <%- include("includes/kategoriavalinta", { "elokuvaKategoria" : "Sota" }) %>   
+                                <%- include("includes/kategoriavalinta", { "elokuvaKategoria" : "Toiminta" }) %>  
+                                <%- include("includes/kategoriavalinta", { "elokuvaKategoria" : "Trilleri" }) %> 
+                                <%- include("includes/kategoriavalinta", { "elokuvaKategoria" : "Western" }) %>             
+                            </div> 
+        
+                            <hr>
+                            
+                            <div class="row" id="buttonbox2">
+                                <div class="container mb-3" id="buttonbox">
+                                    <h5>Suodata valmistumisvuoden mukaan:</h5>
+                                </div>
+        
+                                <label for="aikavali"> Valmistumisvuosi välillä: &nbsp&nbsp </label>
+                                <select id="aikavali" name="aikavali">
+                                    <% if (vuosiluvut) { %>
+                                        <option value="" selected>Valitse vuosi</option>
+                                        <% for (var i = vuosiluvut.vanhinElokuva; i <= vuosiluvut.uusinElokuva; i++) { %>
+                                            <option value="<%=i%>"><%=i%></option>
+                                        <% }; %>
+                                    <% }; %>
+                                <select> 
+
+                                &nbsp-&nbsp
+        
+                                <select id="aikavali" name="aikavali">
+                                    <% if (vuosiluvut) { %>
+                                        <option value="" selected>Valitse vuosi</option>
+                                        <% for (var i = vuosiluvut.vanhinElokuva; i < vuosiluvut.uusinElokuva + 1; i++) { %>
+                                            <option value="<%=i%>"><%=i%></option>
+                                        <% }; %>
+                                    <% }; %>
+                                <select>                 
+                            </div>        
+                            
+                            <hr>
+
+                            <div class="container" id="buttonbox">
+                                <input class="btn btn-primary" id="hakunapit" name="sort" type="submit" value="Nimen mukaan nousevasti">
+                                <input class="btn btn-primary" id="hakunapit" name="sort" type="submit" value="Nimen mukaan laskevasti">
+                                <input class="btn btn-primary" id="hakunapit" name="sort" type="submit" value="Uusin ensin">
+                                <input class="btn btn-primary" id="hakunapit" name="sort" type="submit" value="Vanhin ensin">
+                            </div>
+
+                            <div class="container" id="buttonbox">
+                                <input class="btn btn-primary" id="hakunapit" name="maara" type="submit" value="10">
+                                <input class="btn btn-primary" id="hakunapit" name="maara" type="submit" value="25">
+                                <input class="btn btn-primary" id="hakunapit" name="maara" type="submit" value="50">
+                                <input class="btn btn-primary" id="hakunapit" name="maara" type="submit" value="100">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+    
+                <% if (virhe) {%>
+                    <div class="alert alert-danger mt-3" id="sanoma">
+                        <%=virhe%>
+                    </div>        
+                <% } %>
+
+                <% if (elokuvat) { %>
+                    <table class="table table-bordered table-responsive-md mt-3">
+                        <thead>
+                            <tr>
+                                <th>Elokuva</th>
+                                <th>Valmistumisvuosi</th>
+                                <th>Kategoria</th>
+                                <th>Ohjaaja(t)</th>
+                                <th>Näyttelijät</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <% elokuvat.forEach((elokuva) => { %>
+                                <tr>
+                                    <td><%=elokuva.nimi%></td>
+                                    <td><%=elokuva.valmistumisvuosi%></td>
+                                    <td><%=elokuva.kategoria%></td>
+                                    <td><%=elokuva.ohjaajat%></td>
+                                    <td><%=elokuva.nayttelijat%></td>
+                                </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                <% } else { %>
+                <% } %>
+    
+                <% if (ilmoitus) { %>
+                    <div class="alert alert-info mt-3" id="sanoma">
+                        <%=ilmoitus%>
+                    </div>
+                <% } %>
+
+            </div>
+        </div>
+
+        <div class="container" id="footer">
+            <h6>Ville Johannes Pajala © 2019 </h6>
+        </div>
+
+    </body>
+</html>
+
+
+
+

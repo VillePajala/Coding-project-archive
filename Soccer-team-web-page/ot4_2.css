@@ -1,0 +1,460 @@
+* {
+    text-align: center;
+    font-family: 'Mina', sans-serif;
+  }
+
+.container-fluid {
+
+  }
+
+ul {
+  color: white;
+}
+
+/* Sponsoripalkki */
+#sponssi img {
+  max-height: 30px;
+  margin: 0;
+  padding: 15px 5px 0px 5px;
+  position: relative;
+  z-index: 10000;
+}
+
+#sponssi {
+  height: 40px;
+  padding-bottom: 0;
+}
+
+/*---------------------------------------------------------------------*/
+
+/* Päänavigointi puhelin */
+#navipalkki {
+  height: 70px;
+  margin: 0;
+  background: linear-gradient(#1251A3, #092952);
+}
+
+#navipalkki .navbar-collapse {
+  position: relative;
+  z-index: 10000;
+  background: none;
+  width: 75vw;
+  float: right;
+  margin: auto;
+  color: white;
+}
+
+#navipalkki .nav.navbar-nav.navbar-right li a {
+    color: white;
+    text-shadow: 0 1px 10px black;
+}
+
+#navipalkki .nav.navbar-nav.navbar-right li a:hover {
+    color: white;
+    text-shadow: 0px 5px 20px black;
+}
+
+#navipalkki .divider {
+  width: 100%;
+  height: 2px;
+  background: #6F90C1;
+  margin: 20px 0px 20px 0px;
+}
+
+#navipalkki img {
+  max-height: 60px;
+  margin-left: -10px;
+  padding: 7px;
+  margin-top: 4px;
+  background: white;
+  }
+
+#navipalkki p, ul {
+    font-size: 15px;
+    color: blue;
+  }
+
+#navipalkki .navbar-default {
+  border: none;
+  height: 70px;
+  background: linear-gradient(#1251A3, #092952);
+  padding-top: 5px;
+  text-align: left;
+}
+
+#navipalkki .navbar-brand {
+  font-size: 4.5vw;
+  line-height: 1;
+  padding-top: 17px;
+  color: white;
+  text-align: center;
+  height: 100%;
+  margin-left: -10px;
+}
+
+#nappi {
+  padding-top: 6px;
+  margin-right: -40px;
+}
+
+/*---------------------------------------------------------------------*/
+
+/* Navipalkki2 */
+
+#navipalkki2 {
+  height: 50px;
+  margin: 0;
+  background: linear-gradient(#1251A3, #092952);
+}
+
+#navipalkki2 .navbar-default {
+  border: none;
+  height: 50px;
+  width: 100%;
+  background: linear-gradient(#1251A3, #092952);
+  padding-top: 5px;
+  text-align: left;
+
+}
+
+#navipalkki2 .navbar-brand {
+  font-size: 25px;
+  color: white;
+  font-weight: bold;
+  line-height: 1;
+  padding-top: 3px;
+  text-align: center;
+  height: 100%;
+  margin-left: -10px;
+
+}
+
+#navipalkki2 .nav.navbar-nav.navbar-right li a {
+  width: 13vw;
+  max-width: 600px;
+    color: white;
+    padding-top: 15px;
+    margin-right: -30px;
+}
+
+#navipalkki2 .nav.navbar-nav.navbar-right li a:hover {
+    color: white;
+    background: #092952;
+    padding-bottom: 10px;
+}
+
+/*---------------------------------------------------------------------*/
+
+/* Otsikkopalkki */
+
+#header img {
+
+}
+
+#logo img {
+  height: 180px;
+  width: auto;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+#header h2 {
+  text-align: center;
+  margin: auto;
+  padding: inherit;
+  font-size: 40px;
+  color: white;
+  font-style: italic;
+  text-shadow: 5px 5px 5px black;
+
+}
+
+#header h1 {
+
+}
+
+#header {
+  background-image: url("header2.jpg");
+  background-size: cover;
+  margin: 0;
+  padding-top: 20px;
+  box-shadow: 0 5px 5px grey;
+}
+
+#ottelut {
+
+}
+
+#paalogo {
+  padding-top: 20px;
+}
+
+#paaslogan {
+  padding-top: 50px;
+}
+
+#mennytottelu {
+  color: #092952;
+  background: silver;
+  font-size: 15px;
+  padding: 10px;
+  margin: 40px 10px 0px 10px;
+  margin-top: 0;
+  box-shadow: 0 5px 20px black;
+  background: linear-gradient(white, silver);
+
+}
+
+#tulevaottelu {
+  background: linear-gradient(white, #DDE8F5);
+  font-size: 25px;
+  margin: 0 10px 20px 10px;
+  padding: 10px;
+  box-shadow: 0 5px 20px black;
+  color: #092952;
+}
+
+
+/*---------------------------------------------------------------------*/
+
+/* Sisaltopalkki */
+
+#sisalto {
+  width: 100%;
+  margin: 0;
+  height: 1050px;
+  padding: 0;
+  box-shadow: 0 5px 5px grey;
+  background-size: cover;
+}
+
+
+/* fanituotteet */
+#fani {
+  background: linear-gradient(#1251A3, #DBCAA8);
+  color: white;
+  min-height: 900px;
+  height: 100%;
+  padding: 15px;
+  margin: 0;
+}
+
+#fani img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 10px black;
+}
+
+
+/* Uutisosio */
+#uutiset img {
+  max-width: 100%;
+  box-shadow: 0 3px 10px black;
+}
+
+#uutiset p {
+  margin-top: 20px;
+  text-align: left;
+  padding: 50px:
+}
+
+#uutiset {
+  background: linear-gradient(#092952, #DBCAA8);
+  color: white;
+  height: 100%;
+  padding: 15px;
+}
+
+#kauba {
+  box-shadow: 0 3px 10px black;
+}
+
+/* Apunavi */
+
+#apunavi {
+  background: linear-gradient(#1251A3, #DBCAA8);
+  height: 100%;
+  padding-top: 15px;
+  margin: 0;
+}
+
+#navi2 {
+  height: 50px;
+  margin: 0;
+  background: none;
+  border: none;
+}
+
+#navi2 .navbar-default {
+  border: none;
+  height: 50px;
+  width: 120%;
+  background: none;
+  padding-top: 5px;
+  text-align: left;
+  margin: -20px -50px -20px -30px;
+
+}
+
+#navi2 .navbar-collapse {
+  background: none;
+  background: none;
+
+}
+
+#mNavbar {
+  width: 100%;
+}
+
+#navi2 .nav.nav-pills li a {
+  width: 140%;
+  color: white;
+  padding-top: 15px;
+  background: linear-gradient(#1251A3, #092952);
+  margin-left: -40px;
+
+}
+
+#navi2 .nav.nav-pills li a:hover {
+  width: 140%;
+  color: #092952;
+  padding-top: 15px;
+  background: white;
+  margin-left: -40px;
+}
+
+
+
+/* karuselli */
+#myCarousel {
+	text-align: center;
+	width: 90%;
+  height: auto;
+	margin: auto;
+  overflow: hidden;
+  box-shadow: 0 5px 20px black;
+}
+
+#myCarousel p {
+  text-align: center;
+}
+
+#munKaruselli {
+	text-align: center;
+	font-size: 4vw;
+	padding: 20px;
+}
+
+.carousel-inner {
+	box-shadow: 0 5px 3px black;
+}
+
+#tausta {
+	background-color: silver;
+	padding: 0;
+	box-shadow: 0 5px 20px black;
+
+}
+
+
+/* lomake */
+
+#contact {
+  width: 100%;
+}
+
+/*---------------------------------------------------------------------*/
+
+
+/* somenappi */
+
+#some {
+  margin-top: 500px;
+}
+
+#some img {
+  max-width: 50%;
+  height: auto;
+}
+
+#some h1 {
+  font-size: 25px;
+  color: white;
+}
+
+/* Footer */
+
+#footer {
+  background: #092952;
+  color: white;
+  width: 100%;
+}
+
+
+/* skaalautuminen eri näyttökoille */
+
+@media only screen and (min-width: 768px) {
+  #mennytottelu {
+    font-size: 10px;
+  }
+
+  #tulevaottelu h1 {
+    font-size: 25px;
+  }
+
+  #tulevaottelu h3  {
+    font-size: 20px;
+  }
+
+
+  #tulevaottelu p {
+    font-size: 15px;
+  }
+
+  #header h2 {
+    font-size: 30px;
+  }
+
+  #header img {
+    width: 200px;
+  }
+
+
+}
+
+@media only screen and (min-width: 992px){
+  #mennytottelu {
+    font-size: 15px;
+  }
+
+  #tulevaottelu p {
+    font-size: 20px;
+  }
+  #tulevaottelu h1  {
+    font-size: 40px;
+  }
+  #tulevaottelu h3  {
+    font-size: 25px;
+  }
+
+  #header h2 {
+    font-size: 40px;
+  }
+
+  #header img {
+    width: 250px;
+    margin-top: 20px;
+  }
+
+}
+
+@media only screen and (min-width: 1200px){
+
+  #header img {
+    width: 300px;
+    margin-bottom: 40px;
+    margin-top: 0;
+  }
+
+}

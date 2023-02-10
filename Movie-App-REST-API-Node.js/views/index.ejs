@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="40">
+    <title>Elokuvahaku</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Monoton|Staatliches" rel="stylesheet">
+    <base href="/">
+    <link href="css/styles.css" media="all" rel="stylesheet" type="text/css"/>
+</head>
+
+    <body>
+
+        <div class="container" id="kehys">
+            <div class="container" id="header">
+                <h1 class="mb-3">ElokuvaT</h1>
+            </div>
+
+            <div class="container" id="otsikko">
+                <hr>
+                <h2 class="mb-3">Hae elokuvien julisteita</h2>
+                <hr>
+            </div>
+
+            <form class="form-inline" method="POST" action="/hae/">
+                <div class="card w-100" id="keskitys">
+                    <div class="card-body">
+                        <input class="form-control" type="text" name="title" value="" placeholder="Anna elokuvan nimi..." size="20">
+                        <input class="btn btn-primary" type="submit" value="Lisää">
+                    </div>
+                </div>
+            </form>
+
+            <% if (tulokset) {%>
+                <% tulokset.forEach((tulos) => { %>
+                    <div class="card mb-1" id="content">
+                        <div class="row">
+                            <div class=" col-sm-5 col-xs-12" id="keskitys">
+                                <img class="img-fluid" src="<%=tulos.Poster%>">
+                            </div>
+
+                            <div class="d-none d-md-block col-md-7 " id="sisalto">
+                                <h2><%=tulos.Title%></h2> 
+                                <h2>(<%=tulos.Year%>)</h2>  
+                            </div>
+                        </div>
+                    </div>
+                <% }); %>
+            <% } else {%>
+                <% if (virhe) {%>
+                    <div class="card w-100" id="keskitys">
+                        <br>
+                        <h6><%=virhe%></h6>
+                        <br>
+                    </div>
+                <% } %>
+            <% } %>
+        </div>
+
+        <div class="container" id="footer">
+            <h6>Ville Johannes Pajala © 2019 </h6>
+        </div>
+        
+    </body>
+
+</html>
+
+
+

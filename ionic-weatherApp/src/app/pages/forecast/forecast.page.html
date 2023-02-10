@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>forecast</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding *ngIf="fetchedWeatherForecast.lastWeatherForecast">
+  <div class="grid">
+    <h1>5 vrk:n ennuste <br>{{ fetchedWeatherForecast.lastWeatherForecast.city.name }}</h1>
+  </div>
+  
+  <ion-grid class="gridobject" >
+    <ion-row *ngFor="let forecast of fetchedWeatherForecast.lastWeatherForecast.list; index as i">
+      <div class="frame2" *ngIf="(i + 1) % 8 == 0" >
+        <ion-col>
+          <h4>
+            {{ forecast.weekday}}<br>
+            {{ forecast.dayNumber}}.
+            {{ forecast.month}}<br>
+          </h4>
+
+          <h1 style="font-size: 30px">
+            {{ forecast.main.temp | number:'1.0-0'  }} °C
+          </h1>
+          
+          <i class="owf owf-{{ forecast.weather[0].id }} owf-5x"></i><br><br>
+        </ion-col>
+      </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+

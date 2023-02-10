@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title text-center class="headertext">
+      Mobiilisää
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item *ngIf="hide">
+    {{ city }}
+  </ion-item>
+
+  <ion-card class="maincontent" text-center lines="none" *ngIf="fetchedWeatherData.error != ''">
+    <h2>{{ fetchedWeatherData.error }}</h2>
+  </ion-card>
+
+  <div class="frame" text-center padding *ngIf="fetchedWeatherData.error == ''">
+    <h2>Paikkakunta:</h2>
+    <h1>{{ fetchedWeatherData.fetchedWeatherData.name }}</h1>
+    <h2>{{ fetchedWeatherData.fetchedWeatherData.main.temp }}
+    <img src="http://openweathermap.org/img/w/{{ fetchedWeatherData.fetchedWeatherData.weather[0].icon }}.png"></h2>
+    <h4>{{ fetchedWeatherData.fetchedWeatherData.weather[0].description }} </h4>
+  </div>
+  <br>
+  <div text-center>
+    <ion-button class="nappi" (click)="chooseCity()">Valitse paikkakunta</ion-button>
+  </div>
+</ion-content>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button class="headertext" routerLink="../current">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Tilanne</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button  class="headertext" routerLink="../forecast">
+      <ion-icon name="analytics"></ion-icon>
+      <ion-label>Ennuste</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button  class="headertext" routerLink="../settings">
+      <ion-icon name="settings"></ion-icon>
+      <ion-label>Asetukset</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+

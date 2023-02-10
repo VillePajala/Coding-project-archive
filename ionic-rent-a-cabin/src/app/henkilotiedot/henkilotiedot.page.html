@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Yhteystiedot ja maksutapa
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-card padding color="danger" *ngIf="virhe && !personSaved">
+      {{ virhe }}
+  </ion-card>
+
+  <ion-item>
+    <ion-label position="floating">Nimi</ion-label>
+    <ion-input [(ngModel)]="nimi"  type="text"></ion-input>
+  </ion-item>
+    
+  <ion-item>
+    <ion-label position="floating">Puhelinnumero</ion-label>
+    <ion-input [(ngModel)]="tel" type="tel"></ion-input>
+  </ion-item>
+    
+  <ion-item>
+    <ion-label position="floating">Sähköposti</ion-label>
+    <ion-input [(ngModel)]="email" type="email"></ion-input>
+  </ion-item>
+
+  <ion-list>
+    <ion-radio-group [(ngModel)]="maksutapa">
+      <ion-list-header>
+        Maksutapa
+      </ion-list-header>
+  
+      <ion-item>
+        <ion-label>Lasku</ion-label>
+        <ion-radio value="lasku"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Käteisellä paikan päällä</ion-label>
+        <ion-radio  value="kateinen"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-list>
+
+  <ion-button *ngIf="!personSaved" (click)="checkInput()" padding expand="block">Tallenna Yhteystiedot</ion-button>
+
+  <ion-card text-center padding *ngIf="personSaved == true">
+    <h5>Tiedot tallennettu!</h5>
+  </ion-card>
+
+</ion-content>
+
+
+<ion-footer>
+  <ion-toolbar id="footer">
+  <div float-left>
+    <ion-icon padding size="large" (click)="goBack()" name="arrow-back"></ion-icon>
+  </div>
+  <div float-left>
+    <h6>Edellinen</h6>
+  </div>
+  <div float-right *ngIf="personSaved">
+    <ion-icon padding size="large" text-right (click)="goForward()" name="arrow-forward"></ion-icon>
+  </div>
+  <div float-right *ngIf="personSaved">
+    <h6>Seuraava</h6>
+  </div>
+  </ion-toolbar>
+</ion-footer>
+

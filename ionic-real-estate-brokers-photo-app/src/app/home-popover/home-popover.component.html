@@ -1,0 +1,15 @@
+<ion-content padding>
+  <div style="text-align: center">
+      <ion-label>Uusi kuva</ion-label>
+    <ion-button expand="block" (click)="imageService.takePicture()">
+      <ion-icon padding size="large" name="camera" >
+      </ion-icon>
+    </ion-button>
+    <ion-label>tallennettu kuva</ion-label>
+    <ion-button expand="block" (click)="imageService.choosePicture()">
+      <ion-icon size="large" name="photos" ></ion-icon>
+    </ion-button>
+  </div>
+</ion-content>
+
+

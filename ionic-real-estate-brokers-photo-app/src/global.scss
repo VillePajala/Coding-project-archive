@@ -1,0 +1,26 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+
+#deleteButton {
+    transform: translate(50px, -6px);
+}
+#slideBackground {
+    
+}
+#figCaption {
+    transform: translate(0px, 0px);
+}
+#img {
+    border: solid 4px white;
+}
+

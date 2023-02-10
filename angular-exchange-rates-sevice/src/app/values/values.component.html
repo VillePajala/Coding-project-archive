@@ -1,0 +1,115 @@
+
+<div class="container" id="content2">
+  <div class="row mt-3">
+    <div class="col-6" id="test">
+      <div class="form-group">
+        <label for="currency1">Lähtövaluutta</label>
+        <select class="form-control" [(ngModel)]="currencyFrom" id="currency1"> 
+          <option value="AUD">Australian dollari</option>
+          <option value="BGN">lev</option>
+          <option value="BRL">real</option>
+          <option value="CAD">Kanadan dollari</option>
+          <option value="CHF">Sveitsin frangi</option>
+          <option value="CNY">juan renminbi</option>
+          <option value="CZK">Tšekin koruna</option>
+          <option value="DKK">Tanskan kruunu</option>
+          <option value="EUR">euro</option>
+          <option value="GBP">Englannin punta</option>
+          <option value="HKD">Hongkongin dollari</option>
+          <option value="HRK">kuna</option>
+          <option value="HUF">forintti</option>
+          <option value="IDR">Indonesian rupia</option>
+          <option value="ILS">sekeli</option>
+          <option value="INR">Intian rupia</option>
+          <option value="ISK">Islannin kruunu</option>
+          <option value="JPY">jeni</option>
+          <option value="KRW">Etelä-Korean won</option>
+          <option value="MXN">Meksikon peso</option>
+          <option value="MYR">ringgit</option>
+          <option value="NOK">Norjan kruunu</option>
+          <option value="NZD">Uuden-Seelannin dollari</option>
+          <option value="PHP">Filippiinien peso</option>
+          <option value="PLN">zloty</option>
+          <option value="RON">Romanian leu</option>
+          <option value="RUB">Venäjän rupla</option>
+          <option value="SEK">Ruotsin kruunu</option>
+          <option value="SGD">Singaporen dollari</option>
+          <option value="THB">baht</option>
+          <option value="TRY">Turkin liira</option>
+          <option value="USD">Yhdysvaltain dollari</option>
+          <option value="ZAR">randi</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="col-6" id="test">
+        <button (click)="setBase()" class="btn btn-primary btn-block">Hee kurssit</button>
+    </div>
+
+    <div class="col-0" id="test">
+    </div>
+
+  </div>
+
+  <div *ngIf="exchangeRates" class="row mt-3">
+    <div class="col-6" id="test">
+      <div  class="form-group">
+        <label for="currency2">Kohdevaluutta:</label>
+        <select  class="form-control" [(ngModel)]="currencyTo" id="currency2">
+          <option value="AUD, {{ exchangeRates.rates.AUD }}">Australian dollari ({{ exchangeRates.rates.AUD }})</option>
+          <option value="BGN, {{ exchangeRates.rates.BGN }}">lev ({{ exchangeRates.rates.BGN }})</option>
+          <option value="BRL, {{ exchangeRates.rates.BRL }}">real ({{ exchangeRates.rates.BRL }})</option>
+          <option value="CAD, {{ exchangeRates.rates.CAD }}">Kanadan dollari ({{ exchangeRates.rates.CAD }})</option>
+          <option value="CHF, {{ exchangeRates.rates.CHF }}">Sveitsin frangi ({{ exchangeRates.rates.CHF }})</option>
+          <option value="CNY, {{ exchangeRates.rates.CNY }}">juan renminbi ({{ exchangeRates.rates.CNY }})</option>
+          <option value="CZK, {{ exchangeRates.rates.CZK }}">Tšekin koruna ({{ exchangeRates.rates.CZK }})</option>
+          <option value="DKK, {{ exchangeRates.rates.DKK }}">Tanskan kruunu ({{ exchangeRates.rates.DKK }})</option>
+          <option value="EUR, {{ exchangeRates.rates.EUR }}">euro ({{ exchangeRates.rates.EUR }})</option>
+          <option value="GBP, {{ exchangeRates.rates.GBP }}">Englannin punta ({{ exchangeRates.rates.GBP }})</option>
+          <option value="HKD, {{ exchangeRates.rates.HKD }}">Hongkongin dollari ({{ exchangeRates.rates.HKD }})</option>
+          <option value="HRK, {{ exchangeRates.rates.HRK }}">kuna ({{ exchangeRates.rates.HRK }})</option>
+          <option value="HUF, {{ exchangeRates.rates.HUF }}">forintti ({{ exchangeRates.rates.HUF }})</option>
+          <option value="IDR, {{ exchangeRates.rates.IDR }}">Indonesian rupia ({{ exchangeRates.rates.IDR }})</option>
+          <option value="ILS, {{ exchangeRates.rates.ILS }}">sekeli ({{ exchangeRates.rates.ILS }})</option>
+          <option value="INR, {{ exchangeRates.rates.INR }}">Intian rupia ({{ exchangeRates.rates.INR }})</option>
+          <option value="ISK, {{ exchangeRates.rates.ISK }}">Islannin kruunu ({{ exchangeRates.rates.ISK }})</option>
+          <option value="JPY, {{ exchangeRates.rates.JPY }}">jeni ({{ exchangeRates.rates.JPY }})</option>
+          <option value="KRW, {{ exchangeRates.rates.KRW }}">Etelä-Korean won ({{ exchangeRates.rates.KRW }})</option>
+          <option value="MXN, {{ exchangeRates.rates.MXN }}">Meksikon peso ({{ exchangeRates.rates.MXN }})</option>
+          <option value="MYR, {{ exchangeRates.rates.MYR }}">ringgit ({{ exchangeRates.rates.MYR }})</option>
+          <option value="NOK, {{ exchangeRates.rates.NOK }}">Norjan kruunu ({{ exchangeRates.rates.NOK }})</option>
+          <option value="NZD, {{ exchangeRates.rates.NZD }}">Uuden-Seelannin dollari ({{ exchangeRates.rates.NZD }})</option>
+          <option value="PHP, {{ exchangeRates.rates.PHP }}">Filippiinien peso ({{ exchangeRates.rates.PHP }})</option>
+          <option value="PLN, {{ exchangeRates.rates.PLN }}">zloty ({{ exchangeRates.rates.PLN }})</option>
+          <option value="RON, {{ exchangeRates.rates.RON }}">Romanian leu ({{ exchangeRates.rates.RON }})</option>
+          <option value="RUB, {{ exchangeRates.rates.RUB }}">Venäjän rupla ({{ exchangeRates.rates.RUB }})</option>
+          <option value="SEK, {{ exchangeRates.rates.SEK }}">Ruotsin kruunu ({{ exchangeRates.rates.SEK }})</option>
+          <option value="SGD, {{ exchangeRates.rates.SGD }}">Singaporen dollari ({{ exchangeRates.rates.SGD }})</option>
+          <option value="THB, {{ exchangeRates.rates.THB }}">baht ({{ exchangeRates.rates.THB }})</option>
+          <option value="TRY, {{ exchangeRates.rates.TRY }}">Turkin liira ({{ exchangeRates.rates.TRY }})</option>
+          <option value="USD, {{ exchangeRates.rates.USD }}">Yhdysvaltain dollari ({{ exchangeRates.rates.USD }})</option>
+          <option value="ZAR, {{ exchangeRates.rates.ZAR }}">randi ({{ exchangeRates.rates.ZAR }})</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="col-3" id="buttonbox">
+      <input [(ngModel)]="amount" type="number" class="form-control mt-3" id="amount" placeholder="Amount..">  
+    </div>
+
+    <div class="col-3" id="test">
+      <button (click)="countAmount()" class="btn btn-primary btn-block">Muunna</button>
+    </div>
+  </div>
+
+  <div class="alert alert-danger mt-3" *ngIf="error">
+    {{ error }}
+  </div>
+  
+  <div class="alert alert-success mt-3" *ngIf="sum">
+    Muunnoksen tulos: {{ amount }} {{ convertFrom }} = {{ sum | number:'1.2-2' }} {{ symbol }} <!-- Pyöristys kahteen desimaaliin -->
+  </div>
+</div>
+
+
+

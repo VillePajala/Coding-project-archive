@@ -1,0 +1,29 @@
+<ion-header text-center>
+  <ion-toolbar>
+    <ion-title>
+      Sijaintimuistio
+    </ion-title>
+    <ion-buttons padding slot="end">
+      <ion-icon size="large" id="refresh" name="add"
+      slot="end" (click)="nimeaSijainti()">
+      </ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let sijainti of database.sijainnit">
+    <ion-card text-center>
+      <ion-card-header (click)="naytaTiedotModaalissa(sijainti)">
+        <ion-card-title>{{ sijainti.nimi }}</ion-card-title>
+        <ion-card-subtitle>{{ sijainti.pvm }} klo {{ sijainti.klo }}</ion-card-subtitle>
+      </ion-card-header>
+  
+      <ion-card-content>
+        <ion-icon size="large" id="refresh" name="trash"
+        slot="end" (click)="vahvistaPoisto(sijainti.aikaleima, sijainti.id)">
+        </ion-icon>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

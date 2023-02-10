@@ -1,0 +1,22 @@
+[
+  {
+    "kayttajaId": 1,
+    "kayttajatunnus": "besserwisser",
+    "salasana": "0b006251c563ea80622891f5ba2a4cd90d3fcb40bd9937541876a1effbc49293fb36e742e27365b21026afcf667770627082c81690da6aa486a6f0cddaebdeb7"
+  },
+  {
+    "kayttajaId": 2,
+    "kayttajatunnus": "ville",
+    "salasana": "b129d76a5a9cec9436912aa7fa43bd4e8dff8e8e291cd77d0a3cbc832b2e596dc9fda97616823bd87ad7e4f77b6ab4d0729003964aeb41483cb03d8db3372db9"
+  },
+  {
+    "kayttajaId": 3,
+    "kayttajatunnus": "ville",
+    "salasana": "cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e"
+  },
+  {
+    "kayttajaId": 4,
+    "kayttajatunnus": "valoraami",
+    "salasana": "999b907c9f4c5d541334fea3d62f845d24efc492d7a90481c4c84254bb0223e78ee9224fe09f1441799527646c52ba61b90e2d34439b692eac1fbe4b908847fb"
+  }
+]

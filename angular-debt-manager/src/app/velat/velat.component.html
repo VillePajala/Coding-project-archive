@@ -1,0 +1,28 @@
+<h2>VELAT</h2>
+<h3>Yhteensä: {{ laskeVelat() | currency : "EUR" }}</h3>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Kenelle</th>
+      <th>Summa</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tr *ngFor="let velka of kaikkiVelat">
+    <td>{{ velka.nimi }}</td>
+    <td>{{ velka.summa | currency : "EUR" }}</td>
+    <td><button (click)="poistaVelka(velka.id)" class="btn btn-secondary">Poista</button></td>
+  </tr>
+
+  <tr>
+    <td><input class="forms-control" [(ngModel)]="nimi" placeholder="Kenelle.."></td>
+    <td><input class="forms-control" [(ngModel)]="summa" placeholder="Summa"></td>
+    <td><button (click)="lisaaUusi()" class="btn btn-secondary">Lisää</button></td>
+  </tr>
+</table>
+
+
+
+

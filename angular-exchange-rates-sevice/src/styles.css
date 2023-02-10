@@ -1,0 +1,156 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+
+#frame {
+    font-family: 'Teko', sans-serif;
+    max-width: 600px;
+    box-shadow: 0 2px 15px silver;
+    padding: 20px;
+}
+#header {
+    margin-top: 30px;
+    font-size: 60px;
+    height: 150px;
+    margin: auto;
+    text-align: center;
+    background: #44a08d; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #ffffff, silver, #ffffff); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right,  rgb(2, 63, 112), #0d023f, rgb(2, 63, 112) );
+    box-shadow: 0 2px 5px silver;
+}
+table {
+    font-size: 15px;
+    border-collapse: collapse;
+}
+td {}
+#content {}
+#content2 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    min-height: 600px;
+    font-size: 20px;
+    margin: auto;
+    text-align: center;
+}
+#buttonbox {
+    display: relative;
+    margin: 16px auto;
+    align-content: center;
+}
+#test {
+    font-size: 16px;
+}
+.btn-primary {
+    margin: 32px auto;
+    padding-top: 15x;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+    color: black;
+    background: white;
+    box-shadow: 0 2px 5px silver;
+    border: 1px solid gray;
+}
+.btn-secondary {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-bottom: 4px;
+    font-size: 15px;
+    width: 70px;
+    color: black;
+    background: white;
+    box-shadow: 0 2px 5px silver;
+    margin: 2px;
+    border: 1px solid gray;
+}
+.btn-primary:hover {
+    color: #ffffff;
+    background: silver;
+    color: #ffffff;
+    box-shadow: 0 2px 5px silver;
+    margin: 32px auto;
+    border: 1px solid gray;
+}
+#footer {
+    padding: 5px;
+    margin: auto;
+    text-align: center;
+    mix-blend-mode: screen;
+}
+h1 {
+    padding: 20px 0 20px 0;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    width: 100%;
+    background:white;
+    font-size: 50px;
+    text-transform: uppercase;
+    color: red;
+    text-shadow: 3px 5px 5px rgb(105, 220, 255);
+    mix-blend-mode: screen;
+}
+h6 {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: red;
+    text-shadow: 0 0px 2px rgb(7, 111, 196);
+}
+
+
+
+/* RWD */
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 576px) {
+ 
+ 
+}
+  
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 576px) {
+
+    input {
+        font-size: 15px;   
+    }
+
+    #header {
+        height: 175px;
+    }
+    h1 {
+        font-size: 60px;
+    }
+  
+}
+  
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+    #header {
+        height: 175px;
+    }
+    h1 {
+        font-size: 60px;
+    }
+    btn-primary {
+        
+        font-size: 18px;
+        
+    }
+
+    
+}
+
+  
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    
+    
+}
+  
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+ 
+}
+
+
+
+  

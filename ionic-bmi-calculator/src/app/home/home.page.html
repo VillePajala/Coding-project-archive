@@ -1,0 +1,32 @@
+<div class="container" id="frame">
+  <div class="container" id="content">
+    <div class="container mb-4" id="header">
+        <h1>Painoindeksi</h1>
+    </div>
+      
+    <div class="container" id="buttonBox">
+        <input [(ngModel)]="pituus" type="number" class="form-control mt-3" placeholder="Pituus senttimetreissä"> 
+        <input [(ngModel)]="paino" type="number" class="form-control mt-3" placeholder="Paino kiloissa">
+        <div class="container" id="buttonBox2">
+          <button (click)="tarkastaSyote()" class="btn btn-primary btn-block mt-3">Laske</button>
+        </div>     
+    </div>
+
+    <div class="container" *ngIf="!virhe" id="buttonBox">
+      <div class="alert alert-success mt-3" *ngIf="pyoristettuIndeksi">
+        <h4>Painoindeksi on: <br>{{ pyoristettuIndeksi }}</h4>
+      </div>
+    
+      <div class="alert {{tyyli}} mt-3" *ngIf="kuvaus" id="buttonBox">
+        <h4>Painoindeksin luokitus: <br>{{ kuvaus }} </h4>
+      </div>
+    </div>
+
+    <div class="alert alert-danger mt-3" *ngIf="virhe" id="buttonBox">
+      <h5>{{ virhe }}</h5>
+    </div>
+  </div>
+</div>
+
+
+  

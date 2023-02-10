@@ -1,0 +1,15 @@
+#jumbotron {
+    background-color: rgb(236, 236, 235);
+}
+
+#jumbotron h1, h5 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#jumbotron {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#postimerkki {
+    margin: 20px;
+}

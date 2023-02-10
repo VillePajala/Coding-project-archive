@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Sijaintitiedot</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="takaisin()">Takaisin</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    
+  <ion-card text-center>
+    <ion-card-header>
+      <ion-item>
+        <ion-card-title>{{ sijainti.nimi }}</ion-card-title>
+        <ion-icon size="large" id="refresh" name="trash"
+        slot="end" (click)="vahvistaPoisto(sijainti.aikaleima, sijainti.id)">
+        </ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-card-title>{{ sijainti.ohje }}</ion-card-title>
+      </ion-item>
+      <ion-item>
+          <ion-card-subtitle>{{ sijainti.pvm }} klo {{ sijainti.klo }}</ion-card-subtitle>
+          <ion-card-subtitle>Leveysaste: {{ sijainti.lat }}</ion-card-subtitle>
+          <ion-card-subtitle>Pituusaste: {{ sijainti.lon }}</ion-card-subtitle>
+      </ion-item>
+      
+      
+    </ion-card-header>
+
+    <ion-card-content>
+        <ion-button size="small" color="dark" (click)="lisaaKuva(sijainti.id)">Lisää kuva</ion-button><br><br>
+      <div *ngFor="let kuva of database.kuvat">
+        <div *ngIf="sijainti.id == kuva.sijaintiId">
+            <img id="img" no-padding [src]="kuva.kuva"><br>
+        </div>  
+      </div>
+    </ion-card-content>
+  </ion-card>
+      
+</ion-content>

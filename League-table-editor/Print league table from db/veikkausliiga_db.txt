@@ -1,0 +1,23 @@
+--
+-- Create schema veikkausliiga
+--
+DROP DATABASE IF EXISTS veikkausliiga;
+CREATE DATABASE veikkausliiga DEFAULT CHARACTER SET utf8 COLLATE utf8_swedish_ci;
+USE veikkausliiga;
+DROP TABLE IF EXISTS sarjataulukko;
+CREATE TABLE sarjataulukko (
+  id int(10) auto_increment,
+  joukkue text NOT NULL, 
+  voitot int(10) unsigned NOT NULL,
+  tasapelit int(10) unsigned NOT NULL,
+  tappiot int(10) unsigned NOT NULL, 
+  PRIMARY KEY  (id)
+);
+--
+-- Dumping data for table `sarjataulukko`
+--
+INSERT INTO sarjataulukko (joukkue,voitot,tasapelit,tappiot) 
+VALUES  ('HJK',23,7,3),
+('KuPS',16,8,9),
+('Ilves',15,11,7),
+('FC Lahti',12,13,8);

@@ -1,0 +1,37 @@
+<%- include("includes/header"); -%>
+
+        <hr>
+        <h2 id="alaotsikko" class="mb-2">UUSIMMAT KIRJOITUKSET</h2>
+        <hr><br>
+
+        <% blogitekstit.forEach((blogiteksti) => { %>
+
+        <%
+            let aika = new Date(blogiteksti.aikaleima);
+        %>
+
+        <div id="tekstikehys" class="container">
+            <h2 id="otsake"><%=blogiteksti.otsikko%></h2>
+            <hr>
+            <p id="tiedot"><i>Kirjoittaja: <%=blogiteksti.kirjoittaja%><br>
+                <%=aika.getDate()%>.<%=aika.getMonth()+1%>.<%=aika.getFullYear()%> - klo 
+                <%=aika.getHours()%>:<%=(aika.getMinutes() < 10 ? "0" : '' ) + aika.getMinutes() %></i></p>
+                <hr>
+            <p><%-blogiteksti.kirjoitus%></p>
+            
+            <div id="napit" class="container">
+                <a href="/tykkays<%=blogiteksti.id%>" class="btn btn-primary">Hyvin sanottu (<%=blogiteksti.tykkaykset%>)</a>
+                <a href="/erimieli<%=blogiteksti.id%>" class="btn btn-secondary">En ole samaa mieltä (<%=blogiteksti.erimielet%>)</a>
+            </div>
+        </div><br>
+
+        <% }); %>   <br>
+        
+        <div id="napit" class="container">
+            <a href="/yllapito" class="btn btn-primary">Kirjoita uusi teksti</a>
+        </div>
+    </div>
+            
+<%- include("includes/footer"); -%>
+    
+

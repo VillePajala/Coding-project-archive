@@ -1,0 +1,86 @@
+
+    <%- include("includes/header"); -%>
+
+        <div id="ylatunniste" class="container">
+            <h1 class="mb-2">UUTISPALVELU.FI</h1> 
+
+            <% if (kayttaja) { %>
+                <div id="info" class="container">
+                    <h5><%=kayttaja.tunnus%> &nbsp<br><a href="/logout/" id="logout" class="btn btn-secondary btn-sm">Kirjaudu ulos</a></h5><br>               
+                </div><br>
+            <% } else { %>
+                <div id="info" class="container">
+                    <h5><br><a href="/kirjaudu/" id="logout" class="btn btn-secondary btn-sm">Kirjaudu sisään</a></h5><br>
+                </div><br>
+            <% }; %>
+        </div>
+
+        
+        <% uutiset.forEach((uutinen) => { %>
+
+            <div id="sisalto" class="container mb-4">
+                <h2 id="otsikko" class="mb-2"><%-uutinen.otsikko%></h2><br>
+                <p><%-uutinen.sisalto%></p><br>
+                <h4 class="mb-4">Kommentit</h4>
+
+                <div id="kommentit" class="container">
+                    <% kommentit.forEach((kommentti) => { %>
+                        <% if (kommentti.uutisId == uutinen.uutisId) { 
+
+                            let aika = new Date(kommentti.aikaleima); %>
+
+                            <div id="kommentti" class="container mb-4">
+                                <p id="nimi" class="mb-2"><b><%-kommentti.kayttajanimi%></b>
+
+                                <p id="aika"><i><%=aika.getDate()%>.<%=aika.getMonth()+1%>.<%=aika.getFullYear()%> klo 
+                                    <%=aika.getHours()%>:<%=(aika.getMinutes() < 10 ? "0" : '' ) + aika.getMinutes() %></i></p><br>
+
+                                <div id="kommenttitausta" class="container">
+                                    <p id="mielipide" class="mb-4"><%-kommentti.kommentti%></p>
+                                </div>
+
+                                <% if (kayttaja) { %>
+                                    <% if (kayttaja.tunnus == kommentti.kayttajanimi) { %>
+                                        <div id="napit" class="container">
+                                            <a href="/poista/<%=kommentti.kommenttiId%>" class="btn btn-danger btn-sm nappi">Poista</a>
+                                        </div>
+                                    <% }; %>
+                                <% }; %>
+
+                            </div>
+
+                        <% }; %>
+                    <% }); %>
+
+
+                    <% if (!kayttaja) { %>
+                        <div id="napit" class="container">
+                            <a href="/kirjaudu/" class="btn btn-secondary nappi">Kirjaudu sisään kommentoidaksesi</a>
+                        </div>
+                    <% }; %>
+                
+
+                    <% if (kayttaja) { %>
+                        <form method="POST" name="Form" action="/tallenna/<%=uutinen.uutisId%>" onSubmit="return vahvista()">
+                            <h4>Kirjoita uusi kommentti:</h4><br> 
+                            <textarea name="kirjoitus" id="kirjoitus" class="form-control"></textarea>
+                            <script> CKEDITOR.replace( "kirjoitus" );</script><br>
+                            
+                            <div id="napit" class="container">
+                                <input type="submit" name="tallenna" value="Lähetä kommentti" class="btn btn-primary nappi">
+                            </div>
+                        </form>
+                    <% }; %>
+
+                </div>
+            </div>
+
+        <% }); %>
+
+        <br>
+
+    </div>
+
+    <%- include("includes/footer"); -%>
+
+

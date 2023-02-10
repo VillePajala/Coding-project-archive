@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/home">Sulje</ion-button>
+    </ion-buttons>    
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+  
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item lines="none" *ngIf="newsitem.kuva !='img/eikuvaa.png'">
+      <img src="{{ newsitem.kuva }}">
+    </ion-item>
+
+    <ion-item lines="none" *ngIf="newsitem.kuva =='img/eikuvaa.png'">  
+      <img src="assets/img/eikuvaa.png">
+    </ion-item>
+
+    <ion-item>
+      <h4>{{ newsitem.otsikko }} </h4>
+    </ion-item><br>
+
+    <ion-item>
+      <p>{{ newsitem.sisalto }}</p>
+      <br><br>
+    </ion-item>
+    
+    <ion-item lines="none">
+      <i>Julkaistu: {{ newsitem.pvm }}</i> 
+    </ion-item>
+
+    <div text-center>
+      <ion-button expand="block" target="_blank" href="{{ newsitem.linkki }}">Lue alkuperäinen artikkeli</ion-button>
+    </div>
+      
+  </ion-list>
+
+</ion-content>
+
+

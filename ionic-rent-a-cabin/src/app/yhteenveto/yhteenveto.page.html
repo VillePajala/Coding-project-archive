@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>yhteenveto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card padding>
+    <h4>Tilaaja</h4>
+    <h5>
+      Nimi: {{ personalData[0].nimi }}<br>
+      puhelinnumero: {{ personalData[0].puhelin }}<br>
+      sähköposti: {{ personalData[0].email }}
+    </h5>
+    <h4>Tilaus</h4>
+    <h5>
+      Mökkityyppi: {{ summary[0].mokkiTyyppi }}<br>
+      Vuokrauspäivä: {{ summary[0].varauspaiva }}<br>
+      Vuokrauksen kesto: {{ summary[0].kesto }}<br>
+      Loppusiivous: {{ summary[0].loppuSiivous }}
+    </h5>
+
+    <h4>Loppusumma </h4>
+    <h5 *ngIf="summary[0].loppuSiivous == 'Ei loppusiivousta'">
+      Summa yhteensä: {{ summary[0].mokkiHinta * summary[0].kesto }} €
+    </h5>
+
+    <h6 *ngIf="summary[0].loppuSiivous == 'Kyllä'">
+      Summa yhteensä: {{ summary[0].mokkiHinta * summary[0].kesto + 100 }} €
+    </h6>
+    
+    <h5>Maksutapa</h5>
+    <h6>
+        {{ personalData[0].maksutapa }} 
+    </h6>
+  </ion-card>
+  
+  <ion-button (click)="confirmOrder()" padding expand="block">vahvista varaus</ion-button>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar id="footer">
+   <div float-left>
+    <ion-icon padding size="large" (click)="goBack()" name="arrow-back"></ion-icon>
+   </div>
+  </ion-toolbar>
+</ion-footer>

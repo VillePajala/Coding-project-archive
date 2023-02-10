@@ -1,0 +1,30 @@
+<h2>Tehtävä: {{ nimi }}</h2>
+
+<div class="form-group">
+  <label for="tehtavaNimi">Tehtävän nimi</label>
+  <input ng-model="nimi" type="text" class="form-control" id="tehtavaNimi">
+</div>
+
+<div class="form-group">
+  <label for="tehtavaOhje">Ohje</label>
+  <textarea ng-model="ohje" class="form-control" id="tehtavaOhje"></textarea>
+</div>
+
+<div class="checkbox">
+  <label>
+    <input ng-model="suoritettu" ng-checked="suoritettu" type="checkbox"> Tehtävä on suoritettu
+  </label>
+</div>
+
+<div class="checkbox" ng-show="naytaPoisto">
+  <label>
+    <input ng-model="poistaTehtava" type="checkbox"> Poista tämä tehtävä kokonaan
+  </label>
+</div>
+
+<button class="btn btn-default" ng-click="tallenna()">Tallenna</button>
+
+<a href="#/" class="btn btn-default">Peruuta</a>
+
+
+

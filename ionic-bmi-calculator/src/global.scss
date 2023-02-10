@@ -1,0 +1,129 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+@import '~@ionic/angular/css/display.css';
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+
+#frame {
+    padding: 0;
+    max-width: 900px;
+    font-family: Orbitron;
+}
+#header {
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+}
+h1 {
+    font-family: Orbitron;
+    color: white;
+    text-shadow: 1px 1px 20px silver;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#content {
+    height:100vh;
+    padding: 20px 50px 50px 50px;
+    font-family: cabin;
+    background: #232526;
+    background: -webkit-linear-gradient(to bottom, #232526, #414345); 
+    background: linear-gradient(to bottom, #232526, #414345); 
+    border-left: 5px solid silver;
+    border-right: 5px solid silver;
+    border-bottom: 5px solid silver;
+    border-top: 5px solid silver;
+}
+#buttonBox {
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+}
+#buttonBox2 {
+    margin: auto;
+    text-align: center;
+}
+.alert {
+    margin: auto;
+    text-align: center;
+    border: 5px solid silver;
+}
+#footer {
+    font-size: 15px;
+    color:white;
+    height: 50px;
+    padding-top: 8px;
+    text-align: center;
+    background: #232526;
+    background: -webkit-linear-gradient(to bottom, #232526, #414345); 
+    background: linear-gradient(to bottom, #232526, #414345); 
+    border-left: 5px solid silver;
+    border-right: 5px solid silver;
+    border-bottom: 5px solid silver;
+    box-shadow: 2px 2px 15px silver;
+}
+
+
+/* RWD */
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 576px) {
+ 
+    
+
+}
+  
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 576px) {
+
+    h1 {
+        font-size: 50px;
+    }
+    #header {
+        height: 90px;
+    }
+    #content {
+        max-width: 900px;
+    }
+  
+}
+  
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+  h1 {
+      font-size: 60px;
+  }
+  #header {
+      height: 90px;
+  }
+
+}
+
+  
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    
+    h1 {
+        font-size: 60px;
+    }
+    #header {
+        height: 90px;
+    }
+  
+}
+  
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+ 
+}
+  

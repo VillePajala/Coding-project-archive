@@ -1,0 +1,32 @@
+<%- include("includes/header"); -%>
+
+    <body>
+            <div class="container" id="otsikko">
+                <h2 class="mb-3">Aloita uusi keskustelu</h2>  
+            </div>
+            
+            <div class="container" id="content">
+                <form method="POST" action="/tallenna/">
+                    <label for="otsikkok"><h3 >Otsikko:</h3></label>
+                    <input type="text" name="otsikko" id="otsikkok" class="form-control"><br><br>
+                    <label for="nimi"><h4>Nimi:</h4></label>
+                    <input type="text" name="nimi" id="nimi" class="form-control"><br><br>
+                    <label for="kirjoitus"><h4>Teksti:</h4></label>
+                    <textarea name="kirjoitus" id="kirjoitus" class="form-control"></textarea>
+                    <script> CKEDITOR.replace( "kirjoitus" );</script>
+                    <br>
+
+                    <div class="container" id="buttonbox">
+                        <input class="btn btn-primary" type="submit" value="Tallenna keskustelu">
+                        <a class="btn btn-secondary" href="/">Peruuta</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="container" id="footer">
+            <h6>Ville Johannes Pajala © 2019 </h6>
+        </div>
+
+    </body>
+</html>

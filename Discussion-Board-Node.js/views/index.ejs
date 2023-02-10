@@ -1,0 +1,55 @@
+<%- include("includes/header"); -%>
+
+            <div class="container" id="otsikko"> 
+                <h2 class="mb-3">Aktiiviset keskustelut</h2>
+            </div>
+
+            <div class="container" id="content">
+                <table class="table table-bordered table-responsive-md table-striped table-hover">
+                    <tbody>
+                        <tr>
+                            <th>Keskustelu</th>
+                            <th>Kirjoittaja</th> 
+                            <th>Keskustelu aloitettu</th>
+                            <th>Viimeisin kommentti</th>
+                            <th>Vastaukset</th>
+                        </tr>
+        
+                        <% keskustelut.forEach((keskustelu) => {
+                            let aika = new Date(keskustelu.aikaleima);
+                            let aika2 = new Date(keskustelu.viimeisinkommentti); %>
+                            <tr>
+                                <td><a href="/keskustelu/<%=keskustelu.id%>"><%=keskustelu.otsikko%></a></td>
+                                <td><%=keskustelu.kirjoittaja%></td> 
+                                <td><i><%=aika.getDate()%>.<%=aika.getMonth()+1%>.<%=aika.getFullYear()%> klo 
+                                    <%=aika.getHours()%>:<%=(aika.getMinutes() < 10 ? "0" : '' ) + aika.getMinutes() %></i></td> 
+        
+                                <% if (keskustelu.viimeisinkommentti == 0) { %>
+                                    <td><i>----</i></td>   
+                                <% } else { %>
+                                    <td><i><%=aika2.getDate()%>.<%=aika2.getMonth()+1%>.<%=aika2.getFullYear()%> klo 
+                                    <%=aika2.getHours()%>:<%=(aika2.getMinutes() < 10 ? "0" : '' ) + aika2.getMinutes() %></i></td> 
+                                <% }; %>
+
+                                <td><%=keskustelu.vastaukset%></td>
+                            </tr>
+                        <% }); %>
+        
+                    </tbody>
+                </table><br>
+
+                <div class="container" id="buttonbox">
+                    <a href="/uusikeskustelu/" class="btn btn-primary mb-4">Aloita uusi keskustelu</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" id="footer">
+            <h6>Ville Johannes Pajala © 2019 </h6>
+        </div>
+
+    </body>
+</html>
+
+
+
