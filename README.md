@@ -1,8 +1,8 @@
-#Coding project archive
+# Coding project archive
 
 Collection of old coding projects. Each folder contains a more detailed read me file
 
-##Projects
+## Projects:
 * Angular - BMI calculator
 * Angular - BMI calculator stripped
 * Angular - Debt manager
