@@ -1,0 +1,5 @@
+Windows 35,6
+Program files 33,5
+Program files (86) 30,9
+Program data 12,3
+Käyttäjätä ; 70,3
